@@ -1,0 +1,18 @@
+.active {
+  background-color: black;
+  color: white;
+}
+
+span {
+  position: relative;
+}
+
+.toogle-button {
+  position: absolute;
+  right: -16px;
+  color: black;
+  background-color: aqua;
+  top: -20px;
+  height: 22px;
+}
+
