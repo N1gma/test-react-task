@@ -1,5 +1,4 @@
-// import { combineReducers } from 'redux-immutable';
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import textData from './modules/text';
 
 export default combineReducers({

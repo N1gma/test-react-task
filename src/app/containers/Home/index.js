@@ -37,17 +37,17 @@ class Home extends Component {
     return (
       <div onClick={ this.selectWord }>
         {
-          reactStringReplace(this.props.textData.text, /(\w+)/g, (text, index) =>
+          reactStringReplace(this.props.textData.get('text'), /(\w+)/g, (text, index) =>
             <TextNode
               key={ index }
               id={ index }
               color={
-                this.props.textData.tags.some(tag => {
+                this.props.textData.get('tags').some(tag => {
                   currentTag = tag;
-                  return tag.name === text
-                    && this.props.textData.activeTag === text;
-                }) && currentTag.color }
-              active={ parseInt(this.props.textData.activeTagID, 10) === parseInt(index, 10) }
+                  return tag.get('name') === text
+                    && this.props.textData.get('activeTag') === text;
+                }) && currentTag.get('color') }
+              active={ parseInt(this.props.textData.get('activeTagID'), 10) === parseInt(index, 10) }
               text={ text }
               buttonClick={ this.addNewTag }
             />
@@ -60,7 +60,7 @@ class Home extends Component {
 
 export default connect(
   state => ({
-    textData: state.textData
+    textData: state
   }),
   dispatch => ({
     formatActions: bindActionCreators(formatActions, dispatch)

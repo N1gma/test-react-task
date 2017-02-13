@@ -14,8 +14,8 @@ export function addTag(tag) {
         color: getNewColor()
       }
     }));
-
 }
+
 export function setActiveTag(id, tag) {
   return {
     type: 'SET_ACTIVE_TAG',
